@@ -15,7 +15,6 @@ class Api with ChangeNotifier {
 
   Future<List<Post>> fetchVideos() async {
     _currentPage = _currentPage + 1;
-    print('_currentPage: $_currentPage');
     final url = 'https://internship-service.onrender.com/videos?page=$_currentPage';
 
     final response = await http.get(Uri.parse(url));
