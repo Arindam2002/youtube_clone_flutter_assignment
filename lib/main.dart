@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:youtube_shorts_clone/HomeScreen.dart';
 import 'package:youtube_shorts_clone/providers/apiProvider.dart';
 import 'package:youtube_shorts_clone/shorts_screen.dart';
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: const ShortsScreen(),
+          home: HomeScreen(),
         ),
       ),
     );

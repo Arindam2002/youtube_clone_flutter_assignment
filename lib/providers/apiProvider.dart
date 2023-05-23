@@ -14,7 +14,8 @@ class Api with ChangeNotifier {
 
 
   Future<List<Post>> fetchVideos() async {
-    _currentPage++;
+    _currentPage = _currentPage + 1;
+    print('_currentPage: $_currentPage');
     final url = 'https://internship-service.onrender.com/videos?page=$_currentPage';
 
     final response = await http.get(Uri.parse(url));
@@ -22,13 +23,12 @@ class Api with ChangeNotifier {
     List<Post> posts = [];
     if (response.statusCode == 200) {
       final responseData = json.decode(response.body);
-      // Assuming the API response contains a 'videos' key with the list of videos
       final data = responseData['data'];
       final postsList = data['posts'];
 
       for (var post in postsList) {
         _currentPostList.add(Post.fromJson(post));
-        // posts.add(Post.fromJson(post));
+        posts.add(Post.fromJson(post));
       }
     } else {
       throw Exception('Failed to fetch videos');
