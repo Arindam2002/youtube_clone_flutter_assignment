@@ -1,6 +1,6 @@
 # youtube_clone_flutter_assignment
 
-The complete codebase for this project is on the `master` branch in this repository.
+The complete codebase for this project is in the `main` branch of this repository.
 
 A few points to keep in mind before testing the app:
 
